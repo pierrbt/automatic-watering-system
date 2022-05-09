@@ -12,7 +12,7 @@ A Watering System which is drived by an Arduino and automatically ignites an DC 
  <li>&nbsp;&nbsp;Moisture Sensor </li>
  <li>&nbsp;&nbsp;5-12V power supply </li>
  <li>&nbsp;&nbsp;AC or DC motor</li>
- <li>&nbsp;&nbsp;Water source</li>  
+ <li>&nbsp;&nbsp;Water source + pipes</li>  
  </ul>
  
  
