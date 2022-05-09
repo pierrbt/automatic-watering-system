@@ -11,6 +11,8 @@ A Watering System which is drived by an Arduino and automatically ignites an DC 
  <li>&nbsp;&nbsp;220, ( 10k for mosfet ) ohm resistors </li>
  <li>&nbsp;&nbsp;Moisture Sensor </li>
  <li>&nbsp;&nbsp;5-12V power supply </li>
+ <li>&nbsp;&nbsp;AC or DC motor</li>
+ <li>&nbsp;&nbsp;Water source</li>  
  </ul>
  
  
