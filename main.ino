@@ -1,6 +1,5 @@
 /*
   Language: cpp
-  Comments Language : French
   Date: 2022-04-19
   Name: Arrosoir
   Hardware: Arduino Nano
@@ -32,13 +31,14 @@ bool buttonClicked = false;
 
 void buttonPressed()
 {
+  Serial.println("bouton appuye");
   buttonClicked = true;
 }
 
 void setup() 
 {
   // Configuration de la com série et des I/O
-  Serial.begin(115200);
+  Serial.begin(9600);
   pinMode(LED_RED, OUTPUT);
   pinMode(LED_GREEN, OUTPUT);
   pinMode(BUTTON, INPUT_PULLUP);
@@ -70,15 +70,17 @@ void loop()
   
   if(buttonClicked)
   {
+    Serial.println("btn clique");
     buttonClicked = false;
     unsigned long TTL = millis() + 120000; // Timer 2m après l'heure actuelle
 
-    while(!buttonClicked)
+    while(buttonClicked == false)
     {
       modeSwitch(true);
       if(TTL < millis())
         break;
     }
+    buttonClicked = false;
   }
     // Mesure des valeurs
     int threshold = map(analogRead(THR_KNOB), 0, 1023, 20, 50);
@@ -109,5 +111,5 @@ void loop()
   
     
   // Délai car pas besoin d'un rafraichissement fréquent ( 1 fois toutes les secondes est déjà beaucoup )
-  delay(250);
+  delay(1000);
 }
