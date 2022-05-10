@@ -35,6 +35,15 @@ void buttonPressed()
   buttonClicked = true;
 }
 
+void modeSwitch(bool state = !currentState) 
+{
+  digitalWrite(LED_RED, state);
+  digitalWrite(LED_GREEN, !state);
+  digitalWrite(MOTOR, state);  
+  currentState = state;
+}
+
+
 void setup() 
 {
   // Configuration de la com série et des I/O
@@ -52,18 +61,15 @@ void setup()
 
   // Interruption pour le bouton
   attachInterrupt(digitalPinToInterrupt(3), buttonPressed, FALLING);
+
+  modeSwitch(false);
+  buttonClicked = false;
  
 }
 
 
 
-void modeSwitch(bool state = !currentState) 
-{
-  digitalWrite(LED_RED, state);
-  digitalWrite(LED_GREEN, !state);
-  digitalWrite(MOTOR, state);  
-  currentState = state;
-}
+
 
 void loop() 
 {
@@ -73,12 +79,13 @@ void loop()
     Serial.println("btn clique");
     buttonClicked = false;
     unsigned long TTL = millis() + 120000; // Timer 2m après l'heure actuelle
-
+    modeSwitch(true);
+    digitalWrite(LED_GREEN, HIGH);
     while(buttonClicked == false)
-    {
-      modeSwitch(true);
+    {     
       if(TTL < millis())
         break;
+      delay(10);
     }
     buttonClicked = false;
   }
