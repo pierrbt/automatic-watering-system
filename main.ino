@@ -90,8 +90,8 @@ void loop()
     buttonClicked = false;
   }
     // Mesure des valeurs
-    int threshold = map(analogRead(THR_KNOB), 0, 1023, 20, 50);
-    int moisture = map(analogRead(MOISTURE_SENSOR), 0, 1023, 0, 100);
+    int threshold = map(analogRead(THR_KNOB), 0, 1023, 15, 70);
+    int moisture = map(analogRead(MOISTURE_SENSOR), 0, 768, 0, 100);
 
     // Affichage des infos sur l'écran LCD et la com série
     String thresholdString = "Threshold : " + String(threshold) + " %";
