@@ -7,7 +7,7 @@ A Watering System which is drived by an Arduino and automatically ignites an DC 
  <li>&nbsp;&nbsp;Arduino </li>
  <li>&nbsp;&nbsp;Relay / MOSFET </li>
  <li>&nbsp;&nbsp;LEDs </li>
- <li>&nbsp;&nbsp;Knob </li>
+ <li>&nbsp;&nbsp;Potentiometer </li>
  <li>&nbsp;&nbsp;220, ( 10k for mosfet ) ohm resistors </li>
  <li>&nbsp;&nbsp;Moisture Sensor </li>
  <li>&nbsp;&nbsp;5-12V power supply </li>
